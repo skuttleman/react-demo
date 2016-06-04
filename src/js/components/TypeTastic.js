@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { updateActualText, updateCorrectedText } from '../actions/actions';
+import actions from '../actions/actions';
 
-class TypeTastic extends Component {
+export class TypeTastic extends Component {
   onChange(value) {
     const { dispatch } = this.props;
-    dispatch(updateActualText(value));
-    updateCorrectedText(dispatch, value);
+    dispatch(actions.updateActualText(value));
+    actions.updateCorrectedText(dispatch, value);
   }
 
   render() {
@@ -20,4 +20,4 @@ class TypeTastic extends Component {
   }
 }
 
-export default connect(({ dispatch }) => ({ dispatch }))(TypeTastic);
+export default connector => connect(connector)(TypeTastic);

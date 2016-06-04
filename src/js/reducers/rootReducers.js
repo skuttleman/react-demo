@@ -5,7 +5,9 @@ const simpleReducer = (CASE, state = '', { type, value }) => {
   return (type === CASE) ? value : state;
 };
 
-export default combineReducers({
+export const reducers = {
   actualText: simpleReducer.bind(null, UPDATE_ACTUAL_TEXT),
   correctedText: simpleReducer.bind(null, UPDATE_CORRECTED_TEXT)
-});
+};
+
+export default combineReducers(reducers);

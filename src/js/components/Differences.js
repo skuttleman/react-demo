@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-class Differences extends Component {
-  constructor(props) {
-    super(props);
-  }
-
+export class Differences extends Component {
   calculateDifferences() {
     let { actualText: phrase1, correctedText: phrase2 } = this.props;
     let [list1, list2] = [phrase1, phrase2].map(phrase => phrase.split(/\s+/));
@@ -22,9 +18,4 @@ class Differences extends Component {
   }
 }
 
-export default connect(store => {
-  return {
-    actualText: store.actualText,
-    correctedText: store.correctedText
-  };
-})(Differences);
+export default connector => connect(connector)(Differences);

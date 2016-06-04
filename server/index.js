@@ -6,8 +6,8 @@ let cors = require('cors');
 
 app.use(cors());
 
-app.use('/:phrase', (request, response) => {
-  spellcheck(request.params.phrase)
+app.use('/', (request, response) => {
+  spellcheck(request.headers.phrase || '')
   .then(value => response.json({ value }))
   .catch(error => response.status(400).json({ error }));
 });
