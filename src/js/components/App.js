@@ -1,29 +1,26 @@
 import React, { Component } from 'react';
-import stateManager from '../stateManager';
 import TypeTastic from './TypeTastic';
+import { connect } from 'react-redux';
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    stateManager.wireUp(this);
-  }
-
+class App extends Component {
   render() {
-    let { typeWhatever, typeWhateverElse } = this.state;
-    let updateState = stateManager.updateState.bind(stateManager);
+    let { dispatch, countDispatches } = this.props;
     return (
       <div>
+        <p>Number of Actions Dispatched: {countDispatches}</p>
         <TypeTastic
           placeholder="Type Whatever"
-          property="typeWhatever"
-          updateState={updateState}
+          dispatch={dispatch}
+          type="TYPE_WHATEVER"
         />
         <TypeTastic
           placeholder="Type Whatever Else"
-          property="typeWhateverElse"
-          updateState={updateState}
+          dispatch={dispatch}
+          type="TYPE_WHATEVER_ELSE"
         />
       </div>
     );
   }
 }
+
+export default connect(({ dispatch, countDispatches }) => ({ dispatch, countDispatches }))(App);

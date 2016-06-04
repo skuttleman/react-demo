@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 
 export default class TypeTastic extends Component {
   onChange(value) {
-    let { property, updateState } = this.props;
-    updateState(property, value);
+    let { dispatch, type } = this.props;
+    dispatch({ type, value });
   }
 
   render() {

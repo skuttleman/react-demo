@@ -7,8 +7,12 @@
   color: #333;
 }
 
-.awesome::before, .awesome::after {
-  content: ' !!! ';
+.awesome::before {
+  content: '\00A1\00A1\00A1  ';
+}
+
+.awesome::after {
+  content: '  !!!';
 }
 
 input {
@@ -16,4 +20,10 @@ input {
   border-radius: 2px;
   margin: 10px auto;
   display: block;
+}
+
+ol > li, h4 {
+  margin: 0 auto;
+  text-align: left;
+  width: 300px;
 }
