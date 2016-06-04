@@ -1,9 +1,11 @@
 import React from 'react';
 import { render } from 'react-dom';
-import Hello from './components/Hello';
-import HelloJSX from './components/HelloJSX';
+import TypeTastic from './components/TypeTastic';
 
 render(
-  React.createElement(HelloJSX, { name: 'React tutorial' }),
+  <div>
+    <TypeTastic placeholder="Type Whatever" />
+    <TypeTastic placeholder="Type Whatever Else" />
+  </div>,
   document.getElementById('app-container')
 );
