@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import stateManager from '../stateManager';
+import { connect } from 'react-redux';
 
-export default class DisplayText extends Component {
-  constructor(props) {
-    super(props);
-    stateManager.wireUp(this);
-  }
-
+class DisplayText extends Component {
   render() {
-    let { typeWhatever, typeWhateverElse } = this.state;
+    let { typeWhatever, typeWhateverElse } = this.props;
     return (
       <div>
         <p>Type Whatever:</p>
@@ -19,3 +14,5 @@ export default class DisplayText extends Component {
     );
   }
 }
+
+export default connect(({ typeWhatever, typeWhateverElse }) => ({ typeWhatever, typeWhateverElse }))(DisplayText);
