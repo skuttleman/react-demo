@@ -1,0 +1,19 @@
+* {
+  text-align: center;
+}
+
+.awesome {
+  text-decoration: underline;
+  color: #333;
+}
+
+.awesome::before, .awesome::after {
+  content: ' !!! ';
+}
+
+input {
+  font-size: 20px;
+  border-radius: 2px;
+  margin: 10px auto;
+  display: block;
+}
