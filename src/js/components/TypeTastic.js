@@ -1,25 +1,20 @@
 import React, { Component } from 'react';
+import stateManager from '../stateManager';
 
 export default class TypeTastic extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {};
-  }
-
-  typeSomething(value) {
-    this.setState({
-      whatYouAreTyping: value
-    });
+  onChange(value) {
+    let { property } = this.props;
+    stateManager.updateState(property, value);
   }
 
   render() {
-    let { whatYouAreTyping } = this.state;
     let { placeholder } = this.props;
     return (
-      <div>
-        <input type="text" placeholder={placeholder} onChange={event => this.typeSomething(event.target.value)} />
-        <p>{whatYouAreTyping || '...'}</p>
-      </div>
+      <input
+        type="text"
+        placeholder={placeholder}
+        onChange={event => this.onChange(event.target.value)}
+      />
     );
   }
 }
