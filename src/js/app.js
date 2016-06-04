@@ -3,13 +3,17 @@ import { render } from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 
-import TypeTastic from './components/TypeTastic';
-import Differences from './components/Differences';
+import Type from './components/TypeTastic';
+import Diff from './components/Differences';
 import TextBody from './components/TextBody';
 import reducers from './reducers/rootReducers';
-import { actualConnector, correctedConnector } from './helpers/connectors'
+import {
+  actualConnector, correctedConnector, differencesConnector, typeConnector
+} from './helpers/connectors'
 
 const store = createStore(reducers);
+const TypeTastic = Type(typeConnector);
+const Differences = Diff(differencesConnector);
 const ActualBody = TextBody(actualConnector);
 const CorrectedBody = TextBody(correctedConnector);
 

@@ -2,13 +2,13 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { updateActualText, updateCorrectedText } from '../actions/actions';
 
-class TextBody extends Component {
+export class TextBody extends Component {
   render() {
     let { title, text } = this.props;
     return (
       <div>
         <h1>{title}:</h1>
-        <p>{text}</p>
+        <p>{text || '...'}</p>
       </div>
     );
   }
