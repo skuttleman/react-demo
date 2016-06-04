@@ -1,11 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { render } from 'react-dom';
-import TypeTastic from './components/TypeTastic';
+import App from './components/App';
+import DisplayText from './components/DisplayText';
 
 render(
-  <div>
-    <TypeTastic placeholder="Type Whatever" />
-    <TypeTastic placeholder="Type Whatever Else" />
-  </div>,
+  <App />,
   document.getElementById('app-container')
+);
+
+render(
+  <DisplayText />,
+  document.getElementById('display-container')
 );
