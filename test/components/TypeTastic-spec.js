@@ -15,7 +15,6 @@ describe('TypeTastic Component', () => {
   });
 
   it('updates actual text', () => {
-    spyOn(actions, 'updateCorrectedText');
     let inputBox = TestUtils.scryRenderedDOMComponentsWithTag(component, 'input')[0];
     inputBox.value = phrase;
     TestUtils.Simulate.change(inputBox);

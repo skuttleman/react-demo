@@ -10,6 +10,7 @@
     "Karma"
   ],
   "scripts": {
+    "setup": "npm i -g webpack http-server karma && npm i",
     "start": "webpack && http-server -p 8888 ./build",
     "server": "node server/index.js",
     "dev": "webpack -w",
