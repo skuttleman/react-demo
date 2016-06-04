@@ -1,0 +1,47 @@
+{
+  "name": "react-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack && node server/index.js",
+    "setup": "npm i -g webpack karma && webpack",
+    "dev": "webpack -w",
+    "test:watch": "karma start karma.conf.js --auto-watch",
+    "test": "karma start karma.conf.js --single-run"
+  },
+  "author": "skuttleman@gmail.com",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.11.1",
+    "express": "^4.13.4",
+    "gingerbread": "^0.5.0",
+    "react": "^15.1.0",
+    "react-dom": "^15.1.0",
+    "react-redux": "^4.4.5",
+    "redux": "^3.5.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.4.5",
+    "babel-eslint": "^5.0.0-beta9",
+    "babel-loader": "^6.2.2",
+    "babel-polyfill": "^6.9.0",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-react": "^6.3.13",
+    "babel-preset-stage-1": "^6.5.0",
+    "babelify": "^7.3.0",
+    "browserify": "^13.0.1",
+    "eslint": "2.2.0",
+    "jasmine-core": "^2.4.1",
+    "karma": "^0.13.22",
+    "karma-babel-preprocessor": "^6.0.1",
+    "karma-browserify": "^5.0.5",
+    "karma-chrome-launcher": "^1.0.1",
+    "karma-jasmine": "^1.0.2",
+    "karma-jasmine-html-reporter": "^0.2.0",
+    "karma-verbose-reporter": "0.0.3",
+    "react-addons-test-utils": "^15.1.0",
+    "watchify": "^3.7.0",
+    "webpack": "^1.12.13"
+  }
+}
