@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
+import { updateActualText, updateCorrectedText } from '../actions/actions';
 
-export default class TypeTastic extends Component {
+class TypeTastic extends Component {
   onChange(value) {
-    let { dispatch, type } = this.props;
-    dispatch({ type, value });
+    const { dispatch } = this.props;
+    dispatch(updateActualText(value));
+    updateCorrectedText(dispatch, value);
   }
 
   render() {
-    let { placeholder } = this.props;
     return (
       <input
         type="text"
-        placeholder={placeholder}
+        placeholder="Type Something"
         onChange={event => this.onChange(event.target.value)}
       />
     );
   }
 }
+
+export default connect(({ dispatch }) => ({ dispatch }))(TypeTastic);

@@ -5,12 +5,17 @@
   "main": "index.js",
   "scripts": {
     "start": "webpack && http-server -p 8888 ./build",
+    "server": "node server/index.js",
     "dev": "webpack -w"
   },
   "author": "skuttleman@gmail.com",
   "license": "ISC",
   "dependencies": {
-    "http-server": "^0.9.0",
+    "axios": "^0.11.1",
+    "cors": "^2.7.1",
+    "eslint": "^2.11.1",
+    "express": "^4.13.4",
+    "gingerbread": "^0.5.0",
     "react": "^15.1.0",
     "react-dom": "^15.1.0",
     "react-redux": "^4.4.5",
